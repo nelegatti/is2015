@@ -1,4 +1,4 @@
-package model;
+package iswtp5.model;
 import java.util.ArrayList;
 public class Venta {
      private double _descuento;

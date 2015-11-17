@@ -1,4 +1,4 @@
-package model;
+package iswtp5.model;
 import java.util.ArrayList;
 public class Regla3 implements IRegla{
         private static final double porcentaje = 0.3d;

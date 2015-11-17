@@ -1,4 +1,4 @@
-package model;
+package iswtp5.model;
 public class Regla2 implements IRegla
     {
         private static final double porcentaje1 = 0.03d;

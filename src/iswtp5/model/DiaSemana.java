@@ -1,4 +1,4 @@
-package model;
+package iswtp5.model;
 
 public enum DiaSemana {
     Lunes(1),

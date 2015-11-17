@@ -1,4 +1,4 @@
-package model;
+package iswtp5.model;
 public class Producto {
     public Producto()
         {

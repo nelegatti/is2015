@@ -1,4 +1,4 @@
-package model;
+package iswtp5.model;
 public class  Negocio {
     private static final Producto[] _productos = new Producto[5];
         private static final IRegla[] _reglas = new IRegla[7];
