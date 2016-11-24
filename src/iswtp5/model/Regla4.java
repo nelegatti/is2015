@@ -12,20 +12,25 @@ public class Regla4 implements IRegla{
             for (LineaVenta Detalle : venta.Detalle()) {
                 boolean existe = false;
                 for (ProductoDescuento productoDescuento : productos) {
-                    if (productoDescuento.Producto.Codigo != Detalle.Producto.Codigo) {
+                    //if (productoDescuento.Producto.Codigo != Detalle.Producto.Codigo) {
+                    if (productoDescuento.Producto.Codigo == Detalle.Producto.Codigo) {
+
                         existe = true;
                         productoDescuento.Cantidad += Detalle.Cantidad;
                         break;
                     }
                 }
-                if (existe) {
-                    productos.add(new ProductoDescuento(Detalle.Producto));
+                //if (existe) {
+                if (!existe) {
+                    productos.add(new ProductoDescuento(Detalle.Producto,Detalle.Cantidad));
                 }
             }
             for(ProductoDescuento productoDescuento : productos){
                 if (productoDescuento.Cantidad > 3)
                 {
-                    descuento += productoDescuento.Producto.Precio *  porcentaje;
+                    //descuento += productoDescuento.Producto.Precio *  porcentaje;
+                    descuento += productoDescuento.Producto.Precio *  porcentaje * productoDescuento.Cantidad;
+                    
                 }
             }
             return descuento;

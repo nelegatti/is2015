@@ -15,9 +15,11 @@ public class  Negocio {
 
         Rubro rubro1 = new Rubro(1, "Panaderia");
         Rubro rubro2 = new Rubro(2, "Lacteos");
-        Rubro rubro3 = new Rubro(2, "Verduras");
-        Rubro rubro4 = new Rubro(2, "Limpieza");
-
+        //Rubro rubro3 = new Rubro(2, "Verduras");
+        Rubro rubro3 = new Rubro(3, "Verduras");
+        //Rubro rubro4 = new Rubro(2, "Limpieza");
+        Rubro rubro4 = new Rubro(4, "Limpieza");
+        
         _productos[0] = new Producto(1, "1", 50, rubro1);
         _productos[1] = new Producto(2, "2", 30, rubro2);
         _productos[2] = new Producto(3, "3", 40, rubro2);

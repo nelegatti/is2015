@@ -8,17 +8,20 @@ public class Regla3 implements IRegla{
             ArrayList<ProductoDescuento> productos = new ArrayList<>();
             for (LineaVenta Detalle : venta.Detalle()) {
                 if ("Lacteos".equals(Detalle.Producto.Rubro.Descripcion) 
-                        && "Verduras".equals(Detalle.Producto.Rubro.Descripcion)) {
+                        //&& "Verduras".equals(Detalle.Producto.Rubro.Descripcion)
+                        || "Verduras".equals(Detalle.Producto.Rubro.Descripcion)) {
                     boolean existe = false;
                     for (ProductoDescuento productoDescuento : productos) {
-                        if (productoDescuento.Producto.Codigo != Detalle.Producto.Codigo) {
+                        //if (productoDescuento.Producto.Codigo != Detalle.Producto.Codigo)
+                        if (productoDescuento.Producto.Codigo == Detalle.Producto.Codigo){
                             existe = true;
                             productoDescuento.Cantidad += Detalle.Cantidad;
                             break;
                         }
                     }
-                    if (existe) {
-                        productos.add(new ProductoDescuento(Detalle.Producto));
+                    //if (existe) 
+                      if (!existe) {
+                        productos.add(new ProductoDescuento(Detalle.Producto,Detalle.Cantidad));
                     }
                 }
             }
@@ -31,9 +34,11 @@ public class Regla3 implements IRegla{
                 }
                 else if (productoDescuento.Cantidad > 2 && productoDescuento.Cantidad <= 5)
                 {
-                    descuento += productoDescuento.Producto.Precio * productoDescuento.Cantidad * porcentaje;
+                    //descuento += productoDescuento.Producto.Precio * productoDescuento.Cantidad * porcentaje;
+                    descuento += productoDescuento.Producto.Precio * productoDescuento.Cantidad-1 * porcentaje;
                 }
-                else 
+                else //Sin If
+                    if(productoDescuento.Cantidad>5)
                 {
                     descuento += productoDescuento.Producto.Precio * 4 * porcentaje;
                 }
